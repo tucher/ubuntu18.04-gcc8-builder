@@ -7,6 +7,3 @@ ENV PATH="/usr/lib/x86_64-linux-gnu/qt5/bin:${PATH}"
 
 # RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 700 --slave /usr/bin/g++ g++ /usr/bin/g++-7
 RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8
-
-RUN mkdir -p /deps_build
-RUN cd deps_build && git clone git://sigrok.org/libserialport && cd libserialport && ./autogen.sh && ./configure && make -j4 && make install
